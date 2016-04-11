@@ -9,8 +9,11 @@ class RegistradoForm(forms.ModelForm):
 	def clean_email(self):
 		email = self.cleaned_data.get("email")
 
+		#Dividimos el correo en dos partes, donde el @ queda en medio
 		email_base, proveedor = email.split("@")
+		#dividimos y sacamos el dominio y la extension del correo a la derecha del @
 		dominio, extension = proveedor.split(".")
+		#comparamos que la extension tenga terminacion .edu
 		if not extension == "edu":
 			raise forms.ValidationError("Por favor utilice correo con extension .edu")
 
