@@ -7,6 +7,7 @@ from .models import Registrado
 class AdminRegistrado(admin.ModelAdmin):
 	list_display = ['__unicode__', 'nombre', 'latitud', 'longitud', 'timestamp', 'actualizado']
 	form = RegistradoForm
+	
 	#class Meta:
 	#	model = Registrado
 
