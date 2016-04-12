@@ -12,6 +12,7 @@ class Registrado(models.Model):
 	actualizado = models.DateTimeField(auto_now_add = False, auto_now = True)	
 	latitud = models.CharField(max_length = 20, blank = False, null = False)
 	longitud = models.CharField(max_length = 20, blank = False, null = False)
+	media = models.FileField(upload_to="myfolder/", blank = True, null = True) #BARRA DESPUES, NO ANTES
 
 	def __unicode__(self): #En Python se utiliza __str__
 		return self.email

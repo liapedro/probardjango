@@ -6,7 +6,7 @@ from .models import Registrado
 
 def inicio(request):
 	titulo = "Bienvenidos"
-	form = RegistradoForm(request.POST or None) #Mostramos y validamos el formulario que tenemos en form.py
+	form = RegistradoForm(request.POST or None, request.FILES or None) #Mostramos y validamos el formulario que tenemos en form.py
 	
 	contexto = {
 		"titulo": titulo,
