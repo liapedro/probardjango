@@ -45,3 +45,14 @@ def inicio(request):
 
 
 	return render(request, "inicio.html", contexto)	
+
+def sobre(request):
+	titulo = "Sobre Nosotros"
+	
+	contexto = {
+		"titulo": titulo,
+	}
+
+
+
+	return render(request, "sobre.html", contexto)	
