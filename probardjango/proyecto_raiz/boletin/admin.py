@@ -5,7 +5,7 @@ from .forms import RegistradoForm
 from .models import Registrado
 
 class AdminRegistrado(admin.ModelAdmin):
-	list_display = ['__unicode__', 'nombre', 'latitud', 'longitud', 'timestamp', 'actualizado']
+	list_display = ['__unicode__', 'nombre', 'latitud', 'longitud', 'timestamp', 'actualizado','media']
 	form = RegistradoForm
 	
 	#class Meta:

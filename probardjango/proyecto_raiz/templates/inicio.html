@@ -14,4 +14,10 @@ Inicio
 <input type="submit" value="Registrarse" />
 </form>
 {% endif %}
+
+{% for obj in queryset %}
+<ul><li> {{ obj.email }}</li></ul>
+{% endfor %}
+
+
 {% endblock %}

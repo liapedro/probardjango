@@ -8,9 +8,19 @@ def inicio(request):
 	titulo = "Bienvenidos"
 	form = RegistradoForm(request.POST or None, request.FILES or None) #Mostramos y validamos el formulario que tenemos en form.py
 	
+	#Creamos variable para nuestra consulta query
+	queryset = Registrado.objects.all()
+	#Creamos bucle para leer los objetos que arroja la consulta
+	for obj in queryset:
+		print obj.id
+		print obj.nombre
+		print obj.email
+		print obj.media
+
 	contexto = {
 		"titulo": titulo,
-		"form": form
+		"form": form,
+		"queryset": queryset,
 	}
 
 
