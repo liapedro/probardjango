@@ -27,6 +27,6 @@ class RegistradoForm(forms.ModelForm):
 
 
 #Creacion de el formulario de registro
-class RegForm(forms.Form):
-	nombre_form = forms.CharField(max_length = 100) 
-	edad = forms.IntegerField()
+#class RegForm(forms.Form):
+#	nombre_form = forms.CharField(max_length = 100) 
+#	edad = forms.IntegerField()
