@@ -120,3 +120,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#AGREGAMOS EL DIRECTORIO QUE CONTIENE LOS ARCHIVOS ESTATICOS (.js, .css, imagenes)
+STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, "static_files"),
+    )
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
+#1.- DEBEMOS CREAR UNA CARPETA LLAMADA "static" FUERA DEL PROYECTO RAIZ DONDE
+#CARGAREMOS NUESTROS ARCHIVOS ESTATICOS Y NO HAYA
+#PROBLEMA EN PRODUCCION
+#2.- VAMOS A LA TERMINAL PARA EJECUTAR EL COMANDO DE COLLECTSTATIC

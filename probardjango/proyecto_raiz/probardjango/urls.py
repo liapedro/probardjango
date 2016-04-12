@@ -13,10 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
+from django.conf import settings 
 from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'boletin.views.inicio', name='inicio'),
+    url(r'^sobrenosotros/$', 'boletin.views.sobre', name='sobre'),
 ]
+
+# Validamos si el ambiente es de produccion o desarrllo
+# en caso de que se de produccion, la carpeta que contiene
+# los archivos estaticos debe estar fuera del proyecto de raiz.
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
